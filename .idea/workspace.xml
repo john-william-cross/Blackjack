@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+            <state relative-caret-position="906">
+              <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
               <folding>
                 <element signature="e#527#533#0" expanded="true" />
                 <element signature="e#587#593#0" expanded="true" />
@@ -103,7 +103,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553284983827" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553285426173" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -172,12 +172,12 @@
       <workItem from="1552839767136" duration="3020000" />
       <workItem from="1552912059121" duration="15707000" />
       <workItem from="1553093653057" duration="646000" />
-      <workItem from="1553192302255" duration="28448000" />
+      <workItem from="1553192302255" duration="29146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106340000" />
+    <option name="totallyTimeSpent" value="107038000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -203,7 +203,7 @@
       <window_info anchor="bottom" id="Inspection Results" weight="0.32890365" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49961028" visible="true" weight="0.44407532" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49961028" visible="true" weight="0.03322259" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5733042" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -313,8 +313,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        <state relative-caret-position="906">
+          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
           <folding>
             <element signature="e#527#533#0" expanded="true" />
             <element signature="e#587#593#0" expanded="true" />

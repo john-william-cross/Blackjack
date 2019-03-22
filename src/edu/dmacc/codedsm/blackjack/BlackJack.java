@@ -64,15 +64,14 @@ public class BlackJack {
                 sum = getSum(deck, myHand, sum);
                 System.out.println("\nPlayer hand is: ");
                 printCurrentHand(myHand);
-            }
-            if (sum > 21) {
-                System.out.format("\nPlayer's hand was %d.", sum);
-                System.out.println();
-                System.out.format("\nPlayer busts. ");
-                System.out.format("%s wins!", "Dealer");
-                isPlaying = false;
-            }
-            if (hitOrStand.equals("2")) {
+                if (sum > 21) {
+                    System.out.format("\nPlayer's hand was %d.", sum);
+                    System.out.println();
+                    System.out.format("\nPlayer busts. ");
+                    System.out.format("%s wins!", "Dealer");
+                    isPlaying = false;
+                }
+            } else if (hitOrStand.equals("2")) {
                 System.out.println();
                 while (dealerSum < 17) {
                     dealerSum = getSum(deck, dealerHand, dealerSum);
@@ -130,15 +129,13 @@ public class BlackJack {
                     System.out.format("\nPlayer's hand was %d", sum);
                     System.out.println();
                     System.out.format("\n%s wins!", "Player");
-                } else {
-                    System.out.println("Invalid Input.");
                 }
                 isPlaying = false;
+            } else {
+                System.out.println("Invalid Input.");
             }
-
         }
     }
-
 
     private static int getSum(Map<String, List<Integer>> deck, ArrayList<Card> myHand, int sum) {
         Card hit = dealCard(deck);
