@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d56e7408-bacf-46d2-bbd7-276ea3c8cc1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BlackJackGame/edu/dmacc/codedsm/blackjack/BlackJack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BlackJackGame/edu/dmacc/codedsm/blackjack/BlackJack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java" afterDir="false" />
-    </list>
+    <list default="true" id="d56e7408-bacf-46d2-bbd7-276ea3c8cc1d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +14,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="121" column="58" lean-forward="true" selection-start-line="121" selection-start-column="58" selection-end-line="121" selection-end-column="58" />
+            <state relative-caret-position="492">
+              <caret line="129" column="39" lean-forward="true" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -167,12 +163,12 @@
       <workItem from="1552839767136" duration="3020000" />
       <workItem from="1552912059121" duration="15707000" />
       <workItem from="1553093653057" duration="646000" />
-      <workItem from="1553192302255" duration="4535000" />
+      <workItem from="1553192302255" duration="4829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82427000" />
+    <option name="totallyTimeSpent" value="82721000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -195,15 +191,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.070562296" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.57331866" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.50275636" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.57331866" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32855567" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3261105" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -283,8 +279,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="121" column="58" lean-forward="true" selection-start-line="121" selection-start-column="58" selection-end-line="121" selection-end-column="58" />
+        <state relative-caret-position="492">
+          <caret line="129" column="39" lean-forward="true" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
         </state>
       </provider>
     </entry>
