@@ -36,8 +36,7 @@ public class BlackJack {
             dealerSum = dealerFirst.value + newDealerSecond;
         }
         if (dealerFirst.value > 10 && dealerSecond.value > 10) {
-            int newDealerFirstAndSecond = 20;
-            dealerSum = newDealerFirstAndSecond;
+            dealerSum = 20;
         }
 
         System.out.println("Player's cards are: ");
@@ -52,8 +51,7 @@ public class BlackJack {
             sum = firstCard.value + newSecondCard;
         }
         if (firstCard.value > 10 && secondCard.value > 10) {
-            int newFirstAndSecond = 20;
-            sum = newFirstAndSecond;
+            sum = 20;
         }
 
         boolean isPlaying = true;
