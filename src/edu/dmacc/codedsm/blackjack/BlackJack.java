@@ -100,7 +100,6 @@ public class BlackJack {
                     System.out.format("\nPlayer's hand was %d", sum);
                     System.out.format("\n%s wins!", "Player");
                 }
-
                 isPlaying = false;
             } else {
                 System.out.println("\nInvalid Input.");
@@ -126,9 +125,7 @@ public class BlackJack {
 
         for (int i = 0; i < myHand.size(); i++) {
             Card card = myHand.get(i);
-
             System.out.print(card.suit + " - " + card.value);
-
             if (i + 1 < myHand.size()) {
                 System.out.print(", ");
             }
@@ -143,12 +140,9 @@ public class BlackJack {
     }
 
     public static void printDealerHand(List<Card> dealerHand) {
-
         for (int i = 0; i < dealerHand.size(); i++) {
             Card card = dealerHand.get(i);
-
             System.out.print(card.suit + " - " + card.value);
-
             if (i + 1 < dealerHand.size()) {
                 System.out.print(", ");
             } else {
