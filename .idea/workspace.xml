@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d56e7408-bacf-46d2-bbd7-276ea3c8cc1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BlackJackGame/edu/dmacc/codedsm/blackjack/BlackJack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BlackJackGame/edu/dmacc/codedsm/blackjack/BlackJack.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="135" column="13" lean-forward="true" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+            <state relative-caret-position="816">
+              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
               <folding>
                 <element signature="e#527#533#0" expanded="true" />
                 <element signature="e#587#593#0" expanded="true" />
@@ -71,8 +70,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="343" />
-    <option name="y" value="36" />
+    <option name="x" value="353" />
     <option name="width" value="1343" />
     <option name="height" value="1036" />
   </component>
@@ -105,7 +103,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553284016703" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553284983827" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -174,12 +172,12 @@
       <workItem from="1552839767136" duration="3020000" />
       <workItem from="1552912059121" duration="15707000" />
       <workItem from="1553093653057" duration="646000" />
-      <workItem from="1553192302255" duration="27507000" />
+      <workItem from="1553192302255" duration="28448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105399000" />
+    <option name="totallyTimeSpent" value="106340000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -191,7 +189,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1123" y="162" width="1343" height="1036" extended-state="0" />
+    <frame x="353" y="0" width="1343" height="1036" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.09041309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -204,7 +203,7 @@
       <window_info anchor="bottom" id="Inspection Results" weight="0.32890365" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49961028" visible="true" weight="0.21594684" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49961028" visible="true" weight="0.44407532" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5733042" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -212,7 +211,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32822758" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32779622" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5003897" side_tool="true" weight="0.4496124" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3255814" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -314,8 +313,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/dmacc/codedsm/blackjack/BlackJack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="135" column="13" lean-forward="true" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+        <state relative-caret-position="816">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
           <folding>
             <element signature="e#527#533#0" expanded="true" />
             <element signature="e#587#593#0" expanded="true" />
