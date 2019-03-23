@@ -1,137 +1,159 @@
 package edu.dmacc.codedsm.blackjack;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class BlackJack {
 
     public static void main(String[] args) {
-        Map<String, List<Integer>> deck = new HashMap<>();
-        deck.put("Clubs", createCards());
-        deck.put("Diamonds", createCards());
-        deck.put("Spades", createCards());
-        deck.put("Hearts", createCards());
-
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Card> myHand = new ArrayList<Card>();
-        ArrayList<Card> dealerHand = new ArrayList<Card>();
-
-        Card dealerFirst = dealCard(deck);
-        Card dealerSecond = dealCard(deck);
-        Card firstCard = dealCard(deck);
-        Card secondCard = dealCard(deck);
-
-        myHand.add(firstCard);
-        myHand.add(secondCard);
-        dealerHand.add(dealerSecond);
-        dealerHand.add(dealerFirst);
-
-        printDealerFirst(dealerHand);
-        int dealerSum = dealerFirst.value + dealerSecond.value;
-        if (dealerFirst.value > 10) {
-            int newDealerFirst = 10;
-            dealerSum = newDealerFirst + dealerSecond.value;
-        }
-        if (dealerSecond.value > 10) {
-            int newDealerSecond = 10;
-            dealerSum = dealerFirst.value + newDealerSecond;
-        }
-        if (dealerFirst.value > 10 && dealerSecond.value > 10) {
-            dealerSum = 20;
-        }
-
-        System.out.println("Player's cards are: ");
-        printCurrentHand(myHand);
-        int sum = firstCard.value + secondCard.value;
-        if (firstCard.value > 10) {
-            int newFirstCard = 10;
-            sum = newFirstCard + secondCard.value;
-        }
-        if (secondCard.value > 10) {
-            int newSecondCard = 10;
-            sum = firstCard.value + newSecondCard;
-        }
-        if (firstCard.value > 10 && secondCard.value > 10) {
-            sum = 20;
-        }
-
-        boolean isPlaying = true;
-        while (isPlaying) {
-            System.out.println("\nPress 1 to hit or 2 to stand.");
-            String hitOrStand = scanner.next();
-            if (hitOrStand.equals("1")) {
-                sum = getSum(deck, myHand, sum);
-                System.out.println("\nPlayer hand is: ");
-                printCurrentHand(myHand);
-                if (sum > 21) {
-                    System.out.format("\nPlayer's hand was %d.", sum);
-                    System.out.println();
-                    System.out.format("\nPlayer busts. ");
-                    System.out.format("%s wins!", "Dealer");
-                    isPlaying = false;
-                }
-            } else if (hitOrStand.equals("2")) {
-                System.out.println();
-                while (dealerSum < 17) {
-                    dealerSum = getSum(deck, dealerHand, dealerSum);
-                }
-                if (dealerSum == 21) {
-                    System.out.println("Dealer hand is: ");
-                    printDealerHand(dealerHand);
-                    System.out.format("Dealer's hand was %d", dealerSum);
-                    System.out.println(" ");
-                    System.out.format("%s wins!", "Dealer");
-                } else if (dealerSum == sum) {
-                    System.out.println("Dealer hand is: ");
-                    printDealerHand(dealerHand);
-                    System.out.format("Dealer's hand was %d", dealerSum);
-                    System.out.println();
-                    System.out.println("\nPlayer hand is: ");
-                    printCurrentHand(myHand);
-                    System.out.format("\nPlayer's hand was %d", sum);
-                    System.out.println();
-                    System.out.println("\nIt's a tie!");
-                } else if (dealerSum > 21) {
-                    System.out.println("\nPlayer hand is: ");
-                    printCurrentHand(myHand);
-                    System.out.format("\nPlayer's hand was %d", sum);
-                    System.out.println();
-                    System.out.println("\nDealer hand is: ");
-                    printDealerHand(dealerHand);
-                    System.out.format("Dealer's hand was %d", dealerSum);
-                    System.out.println();
-                    System.out.format("\nDealer busts! %s wins!", "Player");
-                } else if (dealerSum > sum) {
-                    System.out.println("Dealer hand is: ");
-                    printDealerHand(dealerHand);
-                    System.out.format("Dealer's hand was %d", dealerSum);
-                    System.out.println();
-                    System.out.println("\nPlayer hand is: ");
-                    printCurrentHand(myHand);
-                    System.out.format("\nPlayer's hand was %d", sum);
-                    System.out.println();
-                    System.out.format("\n%s wins!", "Dealer");
-                } else if (sum > 21) {
-                    System.out.println("Player's hand is: ");
-                    printCurrentHand(myHand);
-                    System.out.format("\nPlayer's hand was %d", sum);
-                    System.out.format("\nPlayer busts. ");
-                    System.out.println(" ");
-                    System.out.format("%s wins!", "Dealer");
-                } else if (dealerSum < sum) {
-                    System.out.println("Dealer hand is: ");
-                    printDealerHand(dealerHand);
-                    System.out.format("Dealer's hand was %d", dealerSum);
-                    System.out.println();
-                    System.out.println("\nPlayer hand is: ");
-                    printCurrentHand(myHand);
-                    System.out.format("\nPlayer's hand was %d", sum);
-                    System.out.println();
-                    System.out.format("\n%s wins!", "Player");
-                }
-                isPlaying = false;
-            } else {
-                System.out.println("Invalid Input.");
+        try {
+            File file = new File("blackjack_log.txt");
+            if (!file.exists()) {
+                file.createNewFile();
             }
+
+            PrintWriter pw = new PrintWriter(file);
+            Map<String, List<Integer>> deck = new HashMap<>();
+            deck.put("Clubs", createCards());
+            deck.put("Diamonds", createCards());
+            deck.put("Spades", createCards());
+            deck.put("Hearts", createCards());
+
+            Scanner scanner = new Scanner(System.in);
+            ArrayList<Card> myHand = new ArrayList<Card>();
+            ArrayList<Card> dealerHand = new ArrayList<Card>();
+
+            Card dealerFirst = dealCard(deck);
+            Card dealerSecond = dealCard(deck);
+            Card firstCard = dealCard(deck);
+            Card secondCard = dealCard(deck);
+
+            myHand.add(firstCard);
+            myHand.add(secondCard);
+            dealerHand.add(dealerSecond);
+            dealerHand.add(dealerFirst);
+
+            printDealerFirst(dealerHand);
+            int dealerSum = dealerFirst.value + dealerSecond.value;
+            if (dealerFirst.value > 10) {
+                int newDealerFirst = 10;
+                dealerSum = newDealerFirst + dealerSecond.value;
+            }
+            if (dealerSecond.value > 10) {
+                int newDealerSecond = 10;
+                dealerSum = dealerFirst.value + newDealerSecond;
+            }
+            if (dealerFirst.value > 10 && dealerSecond.value > 10) {
+                dealerSum = 20;
+            }
+
+            System.out.println("Player's cards are: ");
+            printCurrentHand(myHand);
+            int sum = firstCard.value + secondCard.value;
+            if (firstCard.value > 10) {
+                int newFirstCard = 10;
+                sum = newFirstCard + secondCard.value;
+            }
+            if (secondCard.value > 10) {
+                int newSecondCard = 10;
+                sum = firstCard.value + newSecondCard;
+            }
+            if (firstCard.value > 10 && secondCard.value > 10) {
+                sum = 20;
+            }
+
+            boolean isPlaying = true;
+            while (isPlaying) {
+                System.out.println("\nPress 1 to hit or 2 to stand.");
+                String hitOrStand = scanner.next();
+                if (hitOrStand.equals("1")) {
+                    sum = getSum(deck, myHand, sum);
+                    System.out.println("\nPlayer hand is: ");
+                    printCurrentHand(myHand);
+                    if (sum > 21) {
+                        System.out.format("\nPlayer's hand was %d.", sum);
+                        pw.format("\nPlayer's hand was %d", sum);
+                        System.out.println();
+                        System.out.format("\nPlayer busts. ");
+                        pw.format("\nPlayer busts. ");
+                        System.out.println("\nDealer's hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("%s wins!", "Dealer");
+                        pw.format("%s wins!", "Dealer");
+                        isPlaying = false;
+                    }
+                } else if (hitOrStand.equals("2")) {
+                    System.out.println();
+                    while (dealerSum < 17) {
+                        dealerSum = getSum(deck, dealerHand, dealerSum);
+                    }
+                    if (dealerSum == 21) {
+                        System.out.println("Dealer hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("Dealer's hand was %d", dealerSum);
+                        System.out.println(" ");
+                        System.out.format("%s wins!", "Dealer");
+                    } else if (dealerSum == sum) {
+                        System.out.println("Dealer hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("Dealer's hand was %d", dealerSum);
+                        System.out.println();
+                        System.out.println("\nPlayer hand is: ");
+                        printCurrentHand(myHand);
+                        System.out.format("\nPlayer's hand was %d", sum);
+                        System.out.println();
+                        System.out.println("\nIt's a tie!");
+                    } else if (dealerSum > 21) {
+                        System.out.println("\nPlayer hand is: ");
+                        printCurrentHand(myHand);
+                        System.out.format("\nPlayer's hand was %d", sum);
+                        System.out.println();
+                        System.out.println("\nDealer hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("Dealer's hand was %d", dealerSum);
+                        System.out.println();
+                        System.out.format("\nDealer busts! %s wins!", "Player");
+                    } else if (dealerSum > sum) {
+                        System.out.println("Dealer hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("Dealer's hand was %d", dealerSum);
+                        System.out.println();
+                        System.out.println("\nPlayer hand is: ");
+                        printCurrentHand(myHand);
+                        System.out.format("\nPlayer's hand was %d", sum);
+                        System.out.println();
+                        System.out.format("\n%s wins!", "Dealer");
+                    } else if (sum > 21) {
+                        System.out.println("Player's hand is: ");
+                        printCurrentHand(myHand);
+                        System.out.format("\nPlayer's hand was %d", sum);
+                        System.out.format("\nPlayer busts. ");
+                        System.out.println(" ");
+                        System.out.format("%s wins!", "Dealer");
+                    } else if (dealerSum < sum) {
+                        System.out.println("Dealer hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("Dealer's hand was %d", dealerSum);
+                        System.out.println();
+                        System.out.println("\nPlayer hand is: ");
+                        printCurrentHand(myHand);
+                        System.out.format("\nPlayer's hand was %d", sum);
+                        System.out.println();
+                        System.out.format("\n%s wins!", "Player");
+                    }
+                    isPlaying = false;
+                } else {
+                    System.out.println("Invalid Input.");
+                }
+            }
+
+            pw.close();
+            System.out.println("\nDone");
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -189,5 +211,6 @@ public class BlackJack {
             }
         }
     }
+
 }
 

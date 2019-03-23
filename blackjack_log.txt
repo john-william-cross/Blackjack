@@ -1,0 +1,3 @@
+
+Player's hand was 22
+Player busts. Dealer wins!
