@@ -1,10 +1,8 @@
 package edu.dmacc.codedsm.blackjack;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class BlackJack {
@@ -12,9 +10,6 @@ public class BlackJack {
     public static void main(String[] args) {
         try {
             File file = new File("blackjack_log.txt");
-            if (!file.exists()) {
-                file.createNewFile();
-            }
             PrintWriter pw = new PrintWriter(file);
 
             Map<String, List<Integer>> deck = new HashMap<>();
@@ -75,6 +70,13 @@ public class BlackJack {
                     System.out.println("\nPlayer hand is: ");
                     printCurrentHand(myHand);
                     if (sum > 21) {
+                        System.out.println("\nPlayer's hand is: ");
+                        printCurrentHand(myHand);
+                        pw.format("\nPlayer's hand is: ");
+                        for (Card card : myHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+
+                        }
                         System.out.format("\nPlayer's hand was %d.", sum);
                         pw.format("\nPlayer's hand was %d", sum);
                         System.out.println();
@@ -82,18 +84,14 @@ public class BlackJack {
                         pw.format("\nPlayer busts. ");
                         System.out.println("\nDealer's hand is: ");
                         printDealerHand(dealerHand);
-                        System.out.format("%s wins!", "Dealer");
-                        String dealerWins = "Dealer wins!";
-                        pw.format("%s wins!", "Dealer");
-                        pw.printf("%n%s", "Player cards:");
-                        for (Card card : myHand) {
-                            pw.printf(" %s - %d, ", card.suit, card.value);
-
-                        }
-                        pw.printf("%n%s", "Dealer cards:");
+                        System.out.format("\nDealer's hand was %d.", dealerSum);
+                        pw.format("\nDealer's hand is: ");
                         for (Card card : dealerHand) {
                             pw.printf(" %s - %d, ", card.suit, card.value);
                         }
+                        pw.format("\nDealer's hand was %d", dealerSum);
+                        System.out.format("\n%s wins!", "Dealer");
+                        pw.format("\n%s wins!", "Dealer");
                         isPlaying = false;
                     }
                 } else if (hitOrStand.equals("2")) {
@@ -102,77 +100,111 @@ public class BlackJack {
                         dealerSum = getSum(deck, dealerHand, dealerSum);
                     }
                     if (dealerSum == 21) {
-                        System.out.println("Dealer hand is: ");
-                        printDealerHand(dealerHand);
-                        System.out.format("Dealer's hand was %d.", dealerSum);
-                        pw.format("Dealer's hand was %d.", dealerSum);
-                        System.out.format("Player's hand is: ");
+                        System.out.println("\nPlayer's hand is: ");
                         printCurrentHand(myHand);
-                        System.out.format("Player's hand was %d.", sum);
-                        pw.format("Player's hand was %d.", sum);
-                        System.out.println(" ");
-                        pw.format(" ");
-                        System.out.format("\n%s wins!", "Dealer");
-                        pw.format("%s wins!", "Dealer");
-                    } else if (dealerSum == sum) {
-                        System.out.println("Dealer hand is: ");
-                        printDealerHand(dealerHand);
-                        System.out.format("Dealer's hand was %d.", dealerSum);
-                        pw.format("Dealer's hand was %d.", dealerSum);
-                        System.out.println();
-                        System.out.println("\nPlayer hand is: ");
-                        printCurrentHand(myHand);
+                        pw.format("\nPlayer's hand is: ");
+                        for (Card card : myHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
                         System.out.format("\nPlayer's hand was %d.", sum);
-                        pw.format("\nPlayer's hand was %d.", sum);
+                        pw.format("\nPlayer's hand was %d", sum);
                         System.out.println();
-                        pw.format(" ");
-                        System.out.println("\nIt's a tie!");
-                        pw.format("\nIt's a tie");
-                    } else if (dealerSum > 21) {
-                        System.out.println("\nPlayer hand is: ");
-                        printCurrentHand(myHand);
-                        System.out.format("\nPlayer's hand was %d.", sum);
-                        pw.format("\nPlayer's hand was %d.", sum);
-                        System.out.println();
-                        pw.format(" ");
-                        System.out.println("\nDealer hand is: ");
+                        System.out.println("\nDealer's hand is: ");
                         printDealerHand(dealerHand);
                         System.out.format("\nDealer's hand was %d.", dealerSum);
-                        pw.format("\nDealer's hand was %d.", dealerSum);
-                        System.out.println();
-                        pw.format(" ");
-                        System.out.format("\nDealer busts! %s wins!", "Player");
-                        pw.format("\nDealer busts! %s wins!", "Player");
-                    } else if (dealerSum > sum) {
-                        System.out.println("Dealer hand is: ");
-                        printDealerHand(dealerHand);
-                        System.out.format("Dealer's hand was %d.", dealerSum);
-                        pw.format("Dealer's hand was %d.", dealerSum);
-                        System.out.println();
-                        pw.format(" ");
-                        System.out.println("\nPlayer hand is: ");
-                        printCurrentHand(myHand);
-                        System.out.format("\nPlayer's hand was %d.", sum);
-                        pw.format("\nPlayer's hand was %d.", sum);
-                        System.out.println();
-                        pw.format(" ");
+                        pw.format("\nDealer's hand is: ");
+                        for (Card card : dealerHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
+                        pw.format("\nDealer's hand was %d", dealerSum);
                         System.out.format("\n%s wins!", "Dealer");
                         pw.format("\n%s wins!", "Dealer");
-                    } else if (dealerSum < sum) {
-                        System.out.println("Dealer hand is: ");
-                        printDealerHand(dealerHand);
-                        System.out.format("Dealer's hand was %d.", dealerSum);
-                        pw.format("Dealer's hand was %d.", dealerSum);
-                        System.out.println();
-                        pw.format(" ");
-                        System.out.println("\nPlayer hand is: ");
+                        break;
+                    } else if (dealerSum == sum) {
+                        System.out.println("\nPlayer's hand is: ");
                         printCurrentHand(myHand);
+                        pw.format("\nPlayer's hand is: ");
+                        for (Card card : myHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
                         System.out.format("\nPlayer's hand was %d.", sum);
-                        pw.format("\nPlayer's had was %d.", sum);
+                        pw.format("\nPlayer's hand was %d", sum);
                         System.out.println();
-                        pw.format(" ");
+                        System.out.println("\nDealer's hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("\nDealer's hand was %d.", dealerSum);
+                        pw.format("\nDealer's hand is: ");
+                        for (Card card : dealerHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
+                        pw.format("\nDealer's hand was %d", dealerSum);
+                        System.out.format("\nIt's a tie!");
+                        pw.format("\nIt's a tie!");
+                        break;
+                    } else if (dealerSum > 21) {
+                        System.out.println("\nPlayer's hand is: ");
+                        printCurrentHand(myHand);
+                        pw.format("\nPlayer's hand is: ");
+                        for (Card card : myHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
+                        System.out.format("\nPlayer's hand was %d.", sum);
+                        pw.format("\nPlayer's hand was %d", sum);
+                        System.out.println();
+                        System.out.println("\nDealer's hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("\nDealer's hand was %d.", dealerSum);
+                        pw.format("\nDealer's hand is: ");
+                        for (Card card : dealerHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
+                        pw.format("\nDealer's hand was %d", dealerSum);
+
+                        System.out.format("\nDealer busts! %s wins!", "Player");
+                        pw.format("\nDealer busts! %s wins!", "Player");
+                        break;
+                    } else if (dealerSum > sum) {
+                        System.out.println("\nPlayer's hand is: ");
+                        printCurrentHand(myHand);
+                        pw.format("\nPlayer's hand is: ");
+                        for (Card card : myHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
+                        System.out.format("\nPlayer's hand was %d.", sum);
+                        pw.format("\nPlayer's hand was %d", sum);
+                        System.out.println();
+                        System.out.println("\nDealer's hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("\nDealer's hand was %d.", dealerSum);
+                        pw.format("\nDealer's hand is: ");
+                        for (Card card : dealerHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
+                        pw.format("\nDealer's hand was %d", dealerSum);
+                        System.out.format("\n%s wins!", "Dealer");
+                        pw.format("\n%s wins!", "Dealer");
+                        break;
+                    } else if (dealerSum < sum) {
+                        System.out.println("\nPlayer's hand is: ");
+                        printCurrentHand(myHand);
+                        pw.format("\nPlayer's hand is: ");
+                        for (Card card : myHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
+                        System.out.format("\nPlayer's hand was %d.", sum);
+                        pw.format("\nPlayer's hand was %d", sum);
+                        System.out.println();
+                        System.out.println("\nDealer's hand is: ");
+                        printDealerHand(dealerHand);
+                        System.out.format("\nDealer's hand was %d.", dealerSum);
+                        pw.format("\nDealer's hand is: ");
+                        for (Card card : dealerHand) {
+                            pw.printf(" %s - %d, ", card.suit, card.value);
+                        }
+                        pw.format("\nDealer's hand was %d", dealerSum);
                         System.out.format("\n%s wins!", "Player");
                         pw.format("\n%s wins!", "Player");
+                        break;
                     }
                     isPlaying = false;
                 } else {
@@ -242,16 +274,6 @@ public class BlackJack {
             }
         }
     }
-
-    /*public static void blackjack_log(List<Card> myHand, Integer sum, List<Card> dealerHand, Integer dealerSum, String dealerWins)
-        throws IOException {
-            FileWriter fileWriter = new FileWriter("blackjack_log.txt");
-            PrintWriter printWriter = new PrintWriter(fileWriter);
-
-            if(dealerWins) {
-
-            }
-        }*/
-    }
+}
 
 

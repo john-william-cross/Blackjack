@@ -1,3 +1,6 @@
-Dealer's hand was 19.
-Player's hand was 19. 
-It's a tie
+
+Player's hand is:  Diamonds - 12,  Hearts - 10, 
+Player's hand was 20
+Dealer's hand is:  Spades - 11,  Hearts - 2,  Spades - 7, 
+Dealer's hand was 19
+Player wins!
